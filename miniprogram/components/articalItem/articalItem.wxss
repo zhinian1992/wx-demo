@@ -1,0 +1,28 @@
+/* components/articalItem.wxss */
+.articalItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width:100%;
+  height:200px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item-img {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 95%; 
+  height: 100px;
+  background-color: #FFF;
+}
+
+.item-detail {
+  width:100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.item-title {
+  font-size: 13px;
+}

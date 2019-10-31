@@ -1,0 +1,18 @@
+<view bindtap="onMyButtonTap" class='articalItem' >
+
+  <!-- 新闻图片 -->
+  <image 
+    class='item-img'
+    mode="aspectFit" 
+    src="{{imgSrc}}" 
+    lazy-load="true" >
+   </image>
+
+  <!-- 新闻标题 -->
+  <view class="item-detail">
+    <view>
+      <text class='item-title' >{{detail.title}}</text>
+    </view>
+  </view>
+
+</view>

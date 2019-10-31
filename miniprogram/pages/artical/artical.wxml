@@ -1,0 +1,22 @@
+<!--pages/artical/artical.wxml-->
+<view class="container">
+
+  <!-- 文章类型选择 -->
+  <view class="articalTypesTip">
+    <label wx:for="{{articalTypes}}" wx:key="name" >
+        <button class="typeButton">{{item.value}}</button>
+    </label>
+  </view>
+
+  <!-- 文章列表 -->
+  <view>
+    <scroll-view scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onScrollLower" >
+      <view class='articals-box'>
+        <view wx:for="{{articals}}" wx:key="docid" class="artical-view">
+          <articalItem detail="{{item}}" />
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  
+</view>

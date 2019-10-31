@@ -1,0 +1,32 @@
+/* pages/artical/artical.wxss */
+
+.articalTypesTip {
+  height: 40px;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  justify-content:space-between;
+  flex-direction: row;
+  flex-wrap:wrap;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.typeButton {
+  font-size: 24rpx;
+}
+
+.articals-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.artical-view {
+  width: 48%;
+  margin-left: 5px;
+  margin-top: 5px;
+}
