@@ -8,7 +8,9 @@ Component({
   },
 
   data: {
-    imgSrc: ''
+    imgSrc_1: '',
+    imgSrc_2: '',
+    imgSrc_3: ''
   }, // 私有数据，可用于模板渲染
 
   lifetimes: {
@@ -22,10 +24,10 @@ Component({
   attached: function () { }, // 此处attached的声明会被lifetimes字段中的声明覆盖
 
   ready: function () {
-    let src = this.properties.detail.imgsrc.length != 0 ? this.properties.detail.imgsrc : "./images/no-image.png"
-    
     this.setData({
-      imgSrc: src
+      imgSrc_1: this.properties.detail.thumbnail_pic_s,
+      imgSrc_2: this.properties.detail.thumbnail_pic_s02,
+      imgSrc_3: this.properties.detail.thumbnail_pic_s03
     })
   },
 
@@ -38,9 +40,8 @@ Component({
 
   methods: {
     onMyButtonTap: function () {
-      console.log("onMyButtonTap")
-      this.setData({
-        // 更新属性和数据的方法与更新页面数据的方法类似
+      wx.navigateTo({
+        url: '../../pages/newDetail/newDetail?key=' + this.properties.detail.url,
       })
     },
     // 内部方法建议以下划线开头

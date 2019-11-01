@@ -1,9 +1,9 @@
-const getWangYiNews = (cbMethod) => {
+const getNews = (type,cbMethod) => {
   wx.request({
-    url: 'https://c.3g.163.com/nc/article/list/T1467284926140/0-100.html',
+    url: 'https://v.juhe.cn/toutiao/index?type=' + type + '&key=82c8db8f92b831f2a2c2eb961dc11a38',
     success(res){
-      if (res.data.T1467284926140.length >= 0){
-        cbMethod && cbMethod(true,res.data.T1467284926140)
+      if (res.data.result.data.length > 0){
+        cbMethod && cbMethod(true, res.data.result.data)
       }
     },
     fail(res){
@@ -13,5 +13,5 @@ const getWangYiNews = (cbMethod) => {
 }
 
 module.exports = {
-  getWangYiNews: getWangYiNews
+  getNews: getNews
 }

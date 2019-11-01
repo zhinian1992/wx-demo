@@ -9,43 +9,57 @@ Page({
   data: {
     scrollHeight: '',
     articalTypes:[
-      { name: 'program', value: '编程语言' , checked:'true' },
-      { name: 'project', value: '软件工程' },
-      { name: 'ML', value: '机器学习' },
-      { name: 'manager', value: '项目管理' }
+      { name: 'top', value: '头条' , checked:'true' },
+      { name: 'shehui', value: '社会' },
+      { name: 'guonei', value: '国内' },
+      { name: 'guoji', value: '国际' },
+      { name: 'tiyu', value: '体育' },
+      { name: 'keji', value: '科技' }
     ],
-    articals: {}
+    articals: [],
+    selectedName:'top'
   },
 
   /**
    * 文章类型选择改变
    */
-  checkboxChange: function (e) {
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+  selectNewsType: function (e) {
+    console.log('checkbox发生change事件，携带value值为：', e)
+    if (this.data.selectedName != e.target.id){
+      this.setData({
+        selectedName: e.target.id
+      })
+      this.getNews(e.target.id)
+    }
   },
 
   /**
-   * 生命周期函数--监听页面加载
+   * 获取聚合新闻，回调函数参数1为调用结果，2为消息内容
    */
-  onLoad: function (options) {
+  getNews: function (type) {
+    netTools.getNews(type,(state, news) => {
+      this.setData({
+        articals:[]
+      })
 
-    /**
-     * 获取网易新闻，回调函数参数1为调用结果，2为消息内容
-     */
-    netTools.getWangYiNews((state,news)=>{
-      if(state){
+      if (state) {
         this.setData({
           articals: news
         })
       }
-      else{
+      else {
         wx.showModal({
           title: '错误',
           content: JSON.stringify(news),
         })
       }
     })
+  },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
     this.setData({
       scrollHeight: wx.getSystemInfoSync().windowHeight - 40
     })
@@ -55,7 +69,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.getNews('top')
   },
 
   /**
@@ -106,5 +120,5 @@ Page({
   onScrollLower : function () {
 
   }
-
+  
 })

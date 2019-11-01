@@ -19,14 +19,6 @@
   font-size: 24rpx;
 }
 
-.articals-box {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
 .artical-view {
-  width: 48%;
-  margin-left: 5px;
-  margin-top: 5px;
+  margin: 5px;
 }

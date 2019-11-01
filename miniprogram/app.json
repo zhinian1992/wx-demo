@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/artical/artical",
     "pages/video/video",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/newDetail/newDetail"
   ],
   "window": {
     "enablePullDownRefresh": true,
@@ -26,7 +27,7 @@
         "pagePath": "pages/artical/artical",
         "iconPath": "images/artical.png",
         "selectedIconPath": "images/artical-select.png",
-        "text": "浪潮"
+        "text": "新闻"
       },
       {
         "pagePath": "pages/video/video",

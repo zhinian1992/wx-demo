@@ -1,13 +1,5 @@
 <view bindtap="onMyButtonTap" class='articalItem' >
 
-  <!-- 新闻图片 -->
-  <image 
-    class='item-img'
-    mode="aspectFit" 
-    src="{{imgSrc}}" 
-    lazy-load="true" >
-   </image>
-
   <!-- 新闻标题 -->
   <view class="item-detail">
     <view>
@@ -15,4 +7,28 @@
     </view>
   </view>
 
+  <!-- 新闻图片 -->
+  <view class='img-box'>
+    <image 
+      class='item-img'
+      mode="aspectFit" 
+      src="{{imgSrc_1}}" 
+      lazy-load="true" >
+    </image>
+
+    <image 
+      class='item-img'
+      mode="aspectFit" 
+      src="{{imgSrc_2}}" 
+      lazy-load="true" >
+    </image>
+
+    <image 
+      class='item-img'
+      mode="aspectFit" 
+      src="{{imgSrc_3}}" 
+      lazy-load="true" >
+    </image>
+  </view>
+  
 </view>
